@@ -1,0 +1,19 @@
+<span><b>Sort by likes:</b> <i class="bi bi-sort-up sort-asc" (click)="sortLikes()"></i></span>
+<div *ngFor="let data of instaData">
+    <div class="card m-2" style="width: 18rem;">
+        <img class="card-img-top" src={{data.Image}} alt="insta_image">
+        <div class="card-body" style="float:left;display: flex;width: 100%;">
+            
+            <span>
+                <div><i class="bi bi-hand-thumbs-up-fill"></i></div>
+                <div class="content">{{data.likes}}</div>
+            </span>
+            <span style="margin-left: 90px;">
+                <div class="heading">Timestamp</div>
+                <div class="content">{{data.timestamp}}</div>
+            </span>
+        </div>
+        
+        <button type="button" class="btn btn-primary" (click)="openModal(data)">Open Image</button>
+    </div>
+</div>
